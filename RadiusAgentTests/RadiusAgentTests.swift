@@ -7,29 +7,43 @@
 
 import XCTest
 
+@testable import RadiusAgent
+
 final class RadiusAgentTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    func testExclusionEquality() {
+        let exclusion1 = Exclusion(facilityID: "A", optionsID: "X")
+        let exclusion2 = Exclusion(facilityID: "B", optionsID: "Y")
+        let exclusion3 = Exclusion(facilityID: "A", optionsID: "X")
+        let exclusion4 = Exclusion(facilityID: "C", optionsID: "Z")
+        
+        XCTAssertEqual(exclusion1, exclusion3)
+        XCTAssertNotEqual(exclusion1, exclusion2)
+        XCTAssertNotEqual(exclusion1, exclusion4)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testExclusionCoding() throws {
+        let exclusion = Exclusion(facilityID: "A", optionsID: "X")
+        
+        let encoder = JSONEncoder()
+        let data = try encoder.encode(exclusion)
+        
+        let decoder = JSONDecoder()
+        let decodedExclusion = try decoder.decode(Exclusion.self, from: data)
+        
+        XCTAssertEqual(exclusion, decodedExclusion)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func testIsSelectable() {
+        let exclusion1 = Exclusion(facilityID: "A", optionsID: "X")
+        let exclusion2 = Exclusion(facilityID: "A", optionsID: "X")
+        let exclusion3 = Exclusion(facilityID: "B", optionsID: "Y")
+        
+        let vm = HomeViewModel()
+        XCTAssertFalse(vm.isSelectable(itemOne: exclusion1, itemTwo: exclusion2))
+        XCTAssertTrue(vm.isSelectable(itemOne: exclusion1, itemTwo: exclusion3))
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
+    
 }
+
+

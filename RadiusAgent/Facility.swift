@@ -18,7 +18,7 @@ class Facility: Codable {
     }
 }
 
-class FacilityOption: Codable {
+class FacilityOption: Codable, Equatable {
     let name: String
     let icon: String
     let id: String
@@ -35,15 +35,23 @@ class FacilityOption: Codable {
         id = try container.decode(String.self, forKey: .id)
         selected = false
     }
+    
+    static func ==(lhs: FacilityOption, rhs: FacilityOption) -> Bool {
+        return lhs.id == rhs.id
+    }
 }
 
-struct Exclusion: Codable {
+struct Exclusion: Codable, Equatable, Hashable {
     let facilityID: String
     let optionsID: String
     
     private enum CodingKeys: String, CodingKey {
         case facilityID = "facility_id"
         case optionsID = "options_id"
+    }
+    
+    static func ===(lhs: Exclusion, rhs: Exclusion) -> Bool {
+        return lhs.facilityID == rhs.facilityID && lhs.optionsID == rhs.facilityID
     }
 }
 
