@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1BB73452A4D64E700B85C0B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BB73442A4D64E700B85C0B /* HomeView.swift */; };
+		B1BB73472A4D64FE00B85C0B /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BB73462A4D64FE00B85C0B /* HomeVM.swift */; };
 		B1F8895C2A4C1D5300212D6D /* RadiusAgentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F8895B2A4C1D5300212D6D /* RadiusAgentApp.swift */; };
-		B1F8895E2A4C1D5300212D6D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F8895D2A4C1D5300212D6D /* ContentView.swift */; };
 		B1F889602A4C1D5500212D6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1F8895F2A4C1D5500212D6D /* Assets.xcassets */; };
 		B1F889642A4C1D5500212D6D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1F889632A4C1D5500212D6D /* Preview Assets.xcassets */; };
 		B1F8896E2A4C1D5500212D6D /* RadiusAgentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F8896D2A4C1D5500212D6D /* RadiusAgentTests.swift */; };
 		B1F889782A4C1D5500212D6D /* RadiusAgentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F889772A4C1D5500212D6D /* RadiusAgentUITests.swift */; };
 		B1F8897A2A4C1D5500212D6D /* RadiusAgentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F889792A4C1D5500212D6D /* RadiusAgentUITestsLaunchTests.swift */; };
+		B1F889872A4C1DFE00212D6D /* Facility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F889862A4C1DFE00212D6D /* Facility.swift */; };
+		B1F889892A4C1E1800212D6D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F889882A4C1E1800212D6D /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B1BB73442A4D64E700B85C0B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B1BB73462A4D64FE00B85C0B /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		B1F889582A4C1D5300212D6D /* RadiusAgent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadiusAgent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1F8895B2A4C1D5300212D6D /* RadiusAgentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiusAgentApp.swift; sourceTree = "<group>"; };
-		B1F8895D2A4C1D5300212D6D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B1F8895F2A4C1D5500212D6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1F889612A4C1D5500212D6D /* RadiusAgent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RadiusAgent.entitlements; sourceTree = "<group>"; };
 		B1F889632A4C1D5500212D6D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -45,6 +49,8 @@
 		B1F889732A4C1D5500212D6D /* RadiusAgentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RadiusAgentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1F889772A4C1D5500212D6D /* RadiusAgentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiusAgentUITests.swift; sourceTree = "<group>"; };
 		B1F889792A4C1D5500212D6D /* RadiusAgentUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiusAgentUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B1F889862A4C1DFE00212D6D /* Facility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facility.swift; sourceTree = "<group>"; };
+		B1F889882A4C1E1800212D6D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +102,10 @@
 			isa = PBXGroup;
 			children = (
 				B1F8895B2A4C1D5300212D6D /* RadiusAgentApp.swift */,
-				B1F8895D2A4C1D5300212D6D /* ContentView.swift */,
+				B1BB73442A4D64E700B85C0B /* HomeView.swift */,
+				B1BB73462A4D64FE00B85C0B /* HomeVM.swift */,
+				B1F889862A4C1DFE00212D6D /* Facility.swift */,
+				B1F889882A4C1E1800212D6D /* NetworkManager.swift */,
 				B1F8895F2A4C1D5500212D6D /* Assets.xcassets */,
 				B1F889612A4C1D5500212D6D /* RadiusAgent.entitlements */,
 				B1F889622A4C1D5500212D6D /* Preview Content */,
@@ -259,7 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1F8895E2A4C1D5300212D6D /* ContentView.swift in Sources */,
+				B1F889892A4C1E1800212D6D /* NetworkManager.swift in Sources */,
+				B1F889872A4C1DFE00212D6D /* Facility.swift in Sources */,
+				B1BB73472A4D64FE00B85C0B /* HomeVM.swift in Sources */,
+				B1BB73452A4D64E700B85C0B /* HomeView.swift in Sources */,
 				B1F8895C2A4C1D5300212D6D /* RadiusAgentApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
