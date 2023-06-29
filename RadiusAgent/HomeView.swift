@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject var homeVM: HomeViewModel
-    
+    @State private var refreshTrigger = false
     init() {
         homeVM = HomeViewModel()
         homeVM.fetchProperties()
@@ -17,14 +17,30 @@ struct HomeView: View {
     
     var body: some View {
         List {
-            ForEach(homeVM.facilities, id: \.facilityID) { facility in
+            ForEach(homeVM.facilities.indices, id: \.self) { facilityIndex in
+                let facility = homeVM.facilities[facilityIndex]
                 Section(header: Text(facility.name)) {
-                    ForEach(facility.options, id: \.id) { option in
-                        Text(option.name)
+                    ForEach(facility.options.indices, id: \.self) { optionIndex in
+                        HStack {
+                            Text(facility.options[optionIndex].name)
+                            Spacer()
+                            if facility.options[optionIndex].selected {
+                                Image(systemName: "checkmark")
+                                    .foregroundColor(.blue)
+                            }
+                        }
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            homeVM.facilities[facilityIndex].options[optionIndex].selected.toggle()
+                            refreshTrigger.toggle()
+//                            facility.options[optionIndex].selected.toggle()
+                        }
                     }
                 }
             }
         }
+        .listStyle(.grouped)
+        .id(refreshTrigger)
     }
 }
 

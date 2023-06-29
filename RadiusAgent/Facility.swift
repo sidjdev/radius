@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct Facility: Codable {
+class Facility: Codable {
     let facilityID: String
     let name: String
-    let options: [FacilityOption]
+    var options: [FacilityOption]
     
     private enum CodingKeys: String, CodingKey {
         case facilityID = "facility_id"
@@ -18,10 +18,23 @@ struct Facility: Codable {
     }
 }
 
-struct FacilityOption: Codable {
+class FacilityOption: Codable {
     let name: String
     let icon: String
     let id: String
+    var selected: Bool = false
+    
+    private enum CodingKeys: String, CodingKey {
+        case name, icon, id
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        name = try container.decode(String.self, forKey: .name)
+        icon = try container.decode(String.self, forKey: .icon)
+        id = try container.decode(String.self, forKey: .id)
+        selected = false
+    }
 }
 
 struct Exclusion: Codable {

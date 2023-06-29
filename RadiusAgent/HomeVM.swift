@@ -18,8 +18,11 @@ class HomeViewModel: ObservableObject {
         NetworkManager.shared.fetchData(from: .facilityData, dataType: FacilityData.self) { [self] result in
             switch result {
             case .success(let facilityData):
-                facilities = facilityData.facilities
-                exclusions = facilityData.exclusions
+                DispatchQueue.main.async { [self] in
+                    facilities = facilityData.facilities
+                    exclusions = facilityData.exclusions
+                }
+                
                 
             case .failure(let error):
                 print(error)
