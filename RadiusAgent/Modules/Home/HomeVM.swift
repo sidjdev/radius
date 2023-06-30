@@ -37,9 +37,6 @@ class HomeViewModel: ObservableObject {
         }
     }
     
-    func isSelectable(itemOne: Exclusion, itemTwo: Exclusion) -> Bool {
-        return !(itemOne == itemTwo)
-    }
     
     private func mapExclusions() {
         exclusionMap = exclusions.reduce(into: [Exclusion : [Exclusion]]()) { partialResult, pair in

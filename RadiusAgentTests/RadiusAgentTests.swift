@@ -34,15 +34,6 @@ final class RadiusAgentTests: XCTestCase {
         XCTAssertEqual(exclusion, decodedExclusion)
     }
     
-    func testIsSelectable() {
-        let exclusion1 = Exclusion(facilityID: "A", optionsID: "X")
-        let exclusion2 = Exclusion(facilityID: "A", optionsID: "X")
-        let exclusion3 = Exclusion(facilityID: "B", optionsID: "Y")
-        
-        let vm = HomeViewModel()
-        XCTAssertFalse(vm.isSelectable(itemOne: exclusion1, itemTwo: exclusion2))
-        XCTAssertTrue(vm.isSelectable(itemOne: exclusion1, itemTwo: exclusion3))
-    }
     
 }
 

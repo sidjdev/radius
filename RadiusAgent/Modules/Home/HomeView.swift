@@ -12,10 +12,9 @@ struct HomeView: View {
     @State private var refreshTrigger = false
     
     
-    
     @State var currentExclusions: [Exclusion] = []
-    
     @State var selectedExclusions: [Exclusion] = []
+    
     init() {
         homeVM = HomeViewModel()
         homeVM.fetchProperties()
@@ -30,6 +29,8 @@ struct HomeView: View {
                         let option = facility.options[optionIndex]
                         let exclusion = Exclusion(facilityID: facility.facilityID, optionsID: option.id)
                         HStack {
+                            Image(option.icon)
+                                .padding(4)
                             Text(option.name)
                                 .foregroundColor(isItemExcluded(exclusion) ? .red : .black)
                             Spacer()
@@ -38,6 +39,7 @@ struct HomeView: View {
                                     .foregroundColor(.blue)
                             }
                         }
+                        .frame(height: 50)
                         .opacity(isItemExcluded(exclusion) ? 0.2 : 1.0)
                         .contentShape(Rectangle())
                         .onTapGesture {
@@ -76,7 +78,6 @@ struct HomeView: View {
                 currentExclusions.append(contentsOf: excludedList)
             }
         }
-        print(currentExclusions)
     }
   
 }

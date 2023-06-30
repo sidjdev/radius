@@ -78,6 +78,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B16C76692A4E968C009F0C7C /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				B16C766A2A4E96A1009F0C7C /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		B16C766A2A4E96A1009F0C7C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B1BB73442A4D64E700B85C0B /* HomeView.swift */,
+				B1BB73462A4D64FE00B85C0B /* HomeVM.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B16C766B2A4E96AD009F0C7C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B1F889882A4C1E1800212D6D /* NetworkManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		B16C766C2A4E96BA009F0C7C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B1F889862A4C1DFE00212D6D /* Facility.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		B1F8894F2A4C1D5300212D6D = {
 			isa = PBXGroup;
 			children = (
@@ -102,10 +135,9 @@
 			isa = PBXGroup;
 			children = (
 				B1F8895B2A4C1D5300212D6D /* RadiusAgentApp.swift */,
-				B1BB73442A4D64E700B85C0B /* HomeView.swift */,
-				B1BB73462A4D64FE00B85C0B /* HomeVM.swift */,
-				B1F889862A4C1DFE00212D6D /* Facility.swift */,
-				B1F889882A4C1E1800212D6D /* NetworkManager.swift */,
+				B16C76692A4E968C009F0C7C /* Modules */,
+				B16C766C2A4E96BA009F0C7C /* Models */,
+				B16C766B2A4E96AD009F0C7C /* Networking */,
 				B1F8895F2A4C1D5500212D6D /* Assets.xcassets */,
 				B1F889612A4C1D5500212D6D /* RadiusAgent.entitlements */,
 				B1F889622A4C1D5500212D6D /* Preview Content */,
